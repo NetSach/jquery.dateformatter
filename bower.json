@@ -1,0 +1,27 @@
+{
+  "name": "jquery.dateformatter",
+  "authors": [
+    "Benjamin Herbulot <bherbulot@netsach.fr>",
+    "NetSach <contact@netsach.fr>"
+  ],
+  "description": "Plugin jquery pour gérer l'affichage du format de la date.",
+  "main": "dateformatter.js",
+  "moduleType": [],
+  "keywords": [
+    "date",
+    "format"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
