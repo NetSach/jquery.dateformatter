@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test format date</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	.code{
+		margin-left: 40px;
+		border-left: 3px solid #222222;
+		padding-left: 5px;
+		background-color: #eeeeee;
+		color: #222222;
+		width: 400px;
+	}
+	#date{
+		position: absolute;
+		right: 20px;
+		top:20px;
+
+	}
+	#array{
+		position: fixed;
+		right: 50px;
+		top: 16vh;
+		width: 450px;
+		background-color: #eeeeee; 
+	}
+	#array table, #array th{
+		border-collapse: collapse;
+		border: 1px solid black;
+
+	}
+
+	#array th{
+		padding: 5px;
+	}
+	#array td{
+		border: 1px dotted black;
+		text-align: center;
+		padding: 5px;
+	}
+	</style>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="date_formater.js"></script>
+</head>
+<body>
+	<span id="date"></span>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#date').html($.date_formater({current_date: new Date(), format: 'l j F Y H:i:s'}));
+		setInterval(function(){
+			$('#date').html($.date_formater({current_date: new Date(), format: 'l j F Y H:i:s'}));
+		}, 1000);
+	});
+	</script>
+	<h1>Plugin jquery date formater</h1>
+	<h2>Français</h2>
+
+	<div class="fr-dates">
+		<h3 id="result-001">Syntaxe</h3>
+		<div class="code">
+			<pre>
+				<code>
+var formated_date = $.date_formater({
+	current_date: new Date(),
+	format: 'l j F Y H:i:s'
+});
+$('#result-001').html(formated_date);
+				</code>
+			</pre>
+		</div>
+		<h3 id="result-002">Syntaxe</h3>
+		<div class="code">
+			<pre>
+				<code>
+var formated_date = $.date_formater({
+	current_date: new Date(),
+	format: 'd/m/y'
+});
+$('#result-002').html(formated_date);
+				</code>
+			</pre>
+		</div>
+		<h3 id="result-003">Syntaxe</h3>
+		<div class="code">
+			<pre>
+				<code>
+var formated_date = $.date_formater({
+	current_date: new Date(),
+	format: 'l d F'
+});
+$('#result-003').html(formated_date);
+				</code>
+			</pre>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+		var formated_date = $.date_formater({
+			current_date: new Date(),
+			format: 'l j F Y H:i:s'
+		});
+		$('#result-001').html(formated_date);
+
+		formated_date = $.date_formater({
+			current_date: new Date(),
+			format: 'd/m/y'
+		});
+		$('#result-002').html(formated_date);
+
+		formated_date = $.date_formater({
+			current_date: new Date(),
+			format: 'l d F'
+		});
+		$('#result-003').html(formated_date);
+
+	});
+	</script>
+	<h2>Anglais</h2>
+	<div class="en-dates">
+		<h3 id="result-004">Syntaxe</h3>
+		<div class="code">
+			<pre>
+				<code>
+var formated_date = $.date_formater({
+	current_date: new Date(),
+	format: 'l j F Y H:i:s',
+	locales: 'en-GB'
+});
+$('#result-004').append(formated_date);
+				</code>
+			</pre>
+		</div>
+		<h3 id="result-005">Syntaxe</h3>
+		<div class="code">
+			<pre>
+				<code>
+var formated_date = $.date_formater({
+	current_date: new Date(),
+	format: 'd/m/y',
+	locales: 'en-GB'
+});
+$('#result-005').append(formated_date);
+				</code>
+			</pre>
+		</div>	
+		<h3 id="result-006">Syntaxe</h3>
+		<div class="code">
+			<pre>
+				<code>
+formated_date = $.date_formater({
+	current_date: new Date(),
+	format: 'l d F',
+	locales: 'en-GB'
+});
+$('#result-006').html(formated_date);
+				</code>
+			</pre>
+		</div>					
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			var formated_date = $.date_formater({
+				current_date: new Date(),
+				format: 'l j F Y H:i:s',
+				locales: 'en-GB'
+			});
+			$('#result-004').html(formated_date);
+
+			formated_date = $.date_formater({
+				current_date: new Date(),
+				format: 'd/m/y',
+				locales: 'en-GB'
+			});
+			$('#result-005').html(formated_date);
+
+			formated_date = $.date_formater({
+				current_date: new Date(),
+				format: 'l d F',
+				locales: 'en-GB'
+			});
+			$('#result-006').html(formated_date);
+
+		});
+	</script>
+	<h2>Espagnol </h2>
+	<div class="es-dates">
+		<h3 id="result-007">Syntaxe</h3>
+		<div class="code">
+			<pre>
+				<code>
+var formated_date = $.date_formater({
+	current_date: new Date(),
+	format: 'l j F Y H:i:s',
+	locales: 'es-ES'
+});
+$('#result-007').html(formated_date);
+				</code>
+			</pre>
+		</div>
+		<h3 id="result-008">Syntaxe</h3>
+		<div class="code">
+			<pre>
+				<code>
+var formated_date = $.date_formater({
+	current_date: new Date(),
+	format: 'd/m/y',
+	locales: 'es-ES'
+});
+$('#result-008').html(formated_date);
+				</code>
+			</pre>
+		</div>
+		<h3 id="result-009">Syntaxe</h3>
+		<div class="code">
+			<pre>
+				<code>
+var formated_date = $.date_formater({
+	current_date: new Date(),
+	format: 'l d F',
+	locales: 'es-ES'
+});
+$('#result-009').html(formated_date);
+				</code>
+			</pre>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			var formated_date = $.date_formater({
+				current_date: new Date(),
+				format: 'l j F Y H:i:s',
+				locales: 'es-ES'
+			});
+			$('#result-007').html(formated_date);
+
+			formated_date = $.date_formater({
+				current_date: new Date(),
+				format: 'd/m/y',
+				locales: 'es-ES'
+			});
+			$('#result-008').html(formated_date);
+
+			formated_date = $.date_formater({
+				current_date: new Date(),
+				format: 'l d F',
+				locales: 'es-ES'
+			});
+			$('#result-009').html(formated_date);
+
+		});
+	</script>
+
+
+	<div id="array">
+		<table>
+			<tr>
+				<th>Charactère</th>
+				<th>Signification</th>
+			</tr>
+			<tr>
+				<th colspan = "2">Jours</th>
+			</tr>
+			<tr>
+				<td>j</td>
+				<td>Jour du mois, sans les zéros initiaux  1 à 31</td>
+			</tr>
+			<tr>
+				<td>l</td>
+				<td> Jour de la semaine, textuel, version longue, en français</td>
+			</tr>
+			<tr>
+				<td>d</td>
+				<td>Jour du mois, sur deux chiffres (avec un zéro initial)  01 à 31</td>
+			</tr>
+			<tr>
+				<th colspan = "2">Mois</th>
+			</tr>
+			<tr>
+				<td>F</td>
+				<td>Mois, textuel, version longue; en français, comme Janvier ou Décembre  Janvier à Décembre</td>
+			</tr>
+			<tr>
+				<td>m</td>
+				<td>Mois au format numérique, avec zéros initiaux 01 à 12</td>
+			</tr>
+			<tr>
+				<td>n</td>
+				<td>Mois sans les zéros initiaux  1 à 12</td>
+			</tr>
+			<tr>
+				<th colspan = "2">Années</th>
+			</tr>
+			<tr>
+				<td>Y</td>
+				<td>Année sur 4 chiffres  Exemples : 1999 ou 2003</td>
+			</tr>
+			<tr>
+				<td>y</td>
+				<td>Année sur 2 chiffres  Exemples : 99 ou 03</td>
+			</tr>
+			<tr>
+				<th colspan = "2">Heures</th>
+			</tr>
+			<tr>
+				<td>H</td>
+				<td>Heure, au format 24h, avec les zéros initiaux 00 à 23</td>
+			</tr>
+			<tr>
+				<td>G</td>
+				<td>Heure, au format 24h, sans les zéros initiaux 0 à 23</td>
+			</tr>
+			<tr>
+				<th colspan = "2">Minutes</th>
+			</tr>
+			<tr>
+				<td>i</td>
+				<td>Minutes avec les zéros initiaux 00 à 59</td>
+			</tr>
+			<tr>
+				<th colspan = "2">Secondes</th>
+			</tr>
+			<tr>
+				<td>s</td>
+				<td>Secondes, avec zéros initiaux 00 à 59</td>
+			</tr>
+
+		</table>
+	</div>
+</body>
+</html>
