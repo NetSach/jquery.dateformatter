@@ -9,7 +9,7 @@
                 locales: "fr-FR"
             }, options);
 
-            var rendered_date = settings.format.replace(/([djlFmnYyGHis])/g, "{{$1}}");
+            var rendered_date = settings.format.replace(/([djlFmnYyGHisu])/g, "{{$1}}");
 
             // Jour  --- ---
             //d Jour du mois, sur deux chiffres (avec un zéro initial)  01 à 31
@@ -44,9 +44,24 @@
             rendered_date = rendered_date.replace("{{i}}", this.prefix_int(settings.current_date.getMinutes()));
             // s Secondes, avec zéros initiaux 00 à 59
             rendered_date = rendered_date.replace("{{s}}", this.prefix_int(settings.current_date.getSeconds()));
+            // u miliSecondes, avec zéros initiaux 000 à 999
+            rendered_date = rendered_date.replace("{{u}}", this.prefix_ms(settings.current_date.getMilliseconds()));
+
+
+
 
             return rendered_date;
 
+        },
+
+        prefix_ms: function(value){
+            if(value < 100 && value > 10){
+                value = '0'+value;
+
+            }else if(value < 10){
+                value = '00'+value;
+            }
+            return value;
         },
 
         prefix_int: function(value){
